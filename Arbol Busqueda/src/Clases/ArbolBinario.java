@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ArbolBinario<T extends Comparable<T>> implements IArbolBusqueda<T> {
 
-    private NodoBinario<T> raiz;
+    protected NodoBinario<T> raiz;
 
     public ArbolBinario() {
         this.raiz = null;
@@ -27,7 +27,7 @@ public class ArbolBinario<T extends Comparable<T>> implements IArbolBusqueda<T> 
     }
 
     private NodoBinario<T> insertar(NodoBinario<T> nodoAct, T dato) throws ExcepcionYaExiste {
-        if (esArbolVacio()) // caso base
+        if (NodoBinario.esNodoVacio(nodoAct)) // caso base
             return new NodoBinario<>(dato);
         // caso general
         if (dato.compareTo(nodoAct.getDato()) < 0)
@@ -178,6 +178,7 @@ public class ArbolBinario<T extends Comparable<T>> implements IArbolBusqueda<T> 
             return;
         recorridoPostOrden(nodoAct.getHijoIzquierdo(), recorrido);
         recorridoPostOrden(nodoAct.getHijoDerecho(), recorrido);
+        recorrido.add(nodoAct.getDato());
     }
 
     public NodoBinario<T> getRaiz() {

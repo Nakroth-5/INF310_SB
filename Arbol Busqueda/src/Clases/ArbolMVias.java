@@ -31,7 +31,11 @@ public class ArbolMVias <T extends Comparable<T>> implements IArbolBusqueda<T> {
         this.raiz = null;
     }
 
-    public NodoMVias<T> getRaiz() {
+    public NodoBinario<T> getRaiz() {
+        return null;
+    }
+
+    public NodoMVias<T> getRaiz1() {
         return this.raiz;
     }
 
@@ -243,7 +247,7 @@ public class ArbolMVias <T extends Comparable<T>> implements IArbolBusqueda<T> {
     @Override
     public List<T> recorridoPostOrden() {
         List<T> recorrido = new ArrayList<>();
-        recorridoPreOrden(this.raiz, recorrido);
+        recorridoPostOrden(this.raiz, recorrido);
         return recorrido;
     }
 

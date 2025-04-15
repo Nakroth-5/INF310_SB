@@ -3,10 +3,12 @@ package Interface;
 import Excepciones.ExcepcionNoExiste;
 import Excepciones.ExcepcionNoExisteNivel;
 import Excepciones.ExcepcionYaExiste;
+import Nodos.NodoBinario;
 
 import java.util.List;
 
 public interface IArbolBusqueda<T extends Comparable<T>> {
+    NodoBinario<T> getRaiz();
     boolean esArbolVacio();
     void insertar(T dato) throws ExcepcionYaExiste;
     void eliminar(T dato) throws ExcepcionNoExiste;

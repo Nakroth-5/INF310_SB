@@ -110,4 +110,8 @@ public class AVL <T extends Comparable<T>> extends ArbolBinario<T> {
         return balancear(nodoAct);
     }
 
+    public NodoBinario<T> getRaiz() {
+        return this.raiz;
+    }
+
 }
